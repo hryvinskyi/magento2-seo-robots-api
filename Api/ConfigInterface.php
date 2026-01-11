@@ -46,4 +46,17 @@ interface ConfigInterface
         $scopeCode = null,
         string $scopeType = ScopeInterface::SCOPE_STORE
     ): bool;
+
+    /**
+     * Check if X-Robots-Tag header is enabled
+     * 
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return bool
+     */
+    public function isRobotsXheaderEnabled(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): bool;
 }
