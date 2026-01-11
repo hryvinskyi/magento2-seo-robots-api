@@ -1,7 +1,8 @@
 <?php
 /**
- * Copyright (c) 2021. All rights reserved.
- * @author: Volodymyr Hryvinskyi <mailto:volodymyr@hryvinskyi.com>
+ * Copyright (c) 2021-2026. Volodymyr Hryvinskyi. All rights reserved.
+ * Author: Volodymyr Hryvinskyi <volodymyr@hryvinskyi.com>
+ * GitHub: https://github.com/hryvinskyi
  */
 
 declare(strict_types=1);
@@ -32,14 +33,6 @@ interface ConfigInterface
      * @param mixed $scopeCode
      * @param string $scopeType
      *
-     * @return int
-     */
-    public function getHttpsMetaRobots($scopeCode = null, string $scopeType = ScopeInterface::SCOPE_STORE): int;
-
-    /**
-     * @param mixed $scopeCode
-     * @param string $scopeType
-     *
      * @return bool
      */
     public function isNoindexNofollowForNoRouteIndex(
@@ -49,7 +42,7 @@ interface ConfigInterface
 
     /**
      * Check if X-Robots-Tag header is enabled
-     * 
+     *
      * @param mixed $scopeCode
      * @param string $scopeType
      *
@@ -59,4 +52,56 @@ interface ConfigInterface
         $scopeCode = null,
         string $scopeType = ScopeInterface::SCOPE_STORE
     ): bool;
+
+    /**
+     * Check if paginated robots is enabled
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return bool
+     */
+    public function isPaginatedRobots(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): bool;
+
+    /**
+     * Get paginated robots meta directives
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getPaginatedMetaRobots(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
+
+    /**
+     * Get independent X-Robots-Tag rules
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getXRobotsRules(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
+
+    /**
+     * Get HTTPS X-Robots-Tag directives
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getHttpsXRobotsDirectives(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
 }

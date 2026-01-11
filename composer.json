@@ -1,7 +1,7 @@
 {
     "name": "hryvinskyi/magento2-seo-robots-api",
-    "version": "1.0.2",
-    "description": "N/A",
+    "version": "2.0.0",
+    "description": "API interfaces for SEO Robots module with flexible directive management",
     "type": "magento2-module",
     "require": {
         "magento/framework": "*"
