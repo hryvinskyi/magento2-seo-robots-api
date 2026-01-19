@@ -33,12 +33,12 @@ interface ConfigInterface
      * @param mixed $scopeCode
      * @param string $scopeType
      *
-     * @return bool
+     * @return array
      */
-    public function isNoindexNofollowForNoRouteIndex(
+    public function getNoRouteRobotsTypes(
         $scopeCode = null,
         string $scopeType = ScopeInterface::SCOPE_STORE
-    ): bool;
+    ): array;
 
     /**
      * Check if X-Robots-Tag header is enabled
@@ -101,6 +101,45 @@ interface ConfigInterface
      * @return array
      */
     public function getHttpsXRobotsDirectives(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
+
+    /**
+     * Get X-Robots-Tag directives for 404 pages
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getNoRouteXRobotsTypes(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
+
+    /**
+     * Check if X-Robots-Tag for paginated content is enabled
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return bool
+     */
+    public function isXRobotsPaginatedEnabled(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): bool;
+
+    /**
+     * Get X-Robots-Tag directives for paginated content
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getPaginatedXRobots(
         $scopeCode = null,
         string $scopeType = ScopeInterface::SCOPE_STORE
     ): array;

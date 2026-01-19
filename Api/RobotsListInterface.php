@@ -85,4 +85,44 @@ interface RobotsListInterface
      * @return array ['valid' => bool, 'errors' => string[]]
      */
     public function validateDirectives(array $directives): array;
+
+    /**
+     * Build robots meta tag string from structured directive objects
+     *
+     * @param array $directives Array of directive objects with {value, bot, modification}
+     * @return string Formatted robots string
+     */
+    public function buildFromStructuredDirectives(array $directives): string;
+
+    /**
+     * Build X-Robots-Tag header value from structured directive objects
+     * Groups directives by bot for proper header formatting
+     *
+     * @param array $directives Array of directive objects with {value, bot, modification}
+     * @return string Formatted X-Robots-Tag header value
+     */
+    public function buildXRobotsFromStructuredDirectives(array $directives): string;
+
+    /**
+     * Validate structured directive objects
+     *
+     * @param array $directives Array of directive objects with {value, bot, modification}
+     * @return array ['valid' => bool, 'errors' => string[]]
+     */
+    public function validateStructuredDirectives(array $directives): array;
+
+    /**
+     * Convert legacy string directives to structured format
+     *
+     * @param array $legacyDirectives Array of string directives
+     * @return array Array of structured directive objects
+     */
+    public function convertToStructured(array $legacyDirectives): array;
+
+    /**
+     * Get directives for Robots (Meta & Header)
+     *
+     * @return array
+     */
+    public function getRobotsDirectives(): array;
 }
