@@ -143,4 +143,30 @@ interface ConfigInterface
         $scopeCode = null,
         string $scopeType = ScopeInterface::SCOPE_STORE
     ): array;
+
+    /**
+     * Check if paginated with filter robots is enabled
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return bool
+     */
+    public function isPaginatedFilteredRobots(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): bool;
+
+    /**
+     * Get paginated with filter robots meta directives
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getPaginatedFilteredMetaRobots(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
 }
