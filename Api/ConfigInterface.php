@@ -169,4 +169,30 @@ interface ConfigInterface
         $scopeCode = null,
         string $scopeType = ScopeInterface::SCOPE_STORE
     ): array;
+
+    /**
+     * Check if X-Robots-Tag for paginated content with filters is enabled
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return bool
+     */
+    public function isXRobotsPaginatedFilteredEnabled(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): bool;
+
+    /**
+     * Get X-Robots-Tag directives for paginated content with filters
+     *
+     * @param mixed $scopeCode
+     * @param string $scopeType
+     *
+     * @return array
+     */
+    public function getPaginatedFilteredXRobots(
+        $scopeCode = null,
+        string $scopeType = ScopeInterface::SCOPE_STORE
+    ): array;
 }
